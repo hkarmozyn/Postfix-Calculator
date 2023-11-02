@@ -6,5 +6,12 @@ public class Main {
         String userInput = s.nextLine();
 
 
+        Stack forward = new Stack<>();
+        Stack Backwards = new Stack<>();
+
+        for(int i=0; i<userInput.length(); i++){
+            forward.push(userInput.charAt(i));
+        }
+
     }
 }
