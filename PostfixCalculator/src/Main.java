@@ -7,11 +7,16 @@ public class Main {
 
 
         Stack forward = new Stack<>();
-        Stack Backwards = new Stack<>();
+        Stack backwards = new Stack<>();
 
         for(int i=0; i<userInput.length(); i++){
             forward.push(userInput.charAt(i));
         }
+
+        for(int i=0; i< userInput.length();i++){
+            backwards.push(forward.pop());
+        }
+        System.out.println(backwards.peek());
 
     }
 }
