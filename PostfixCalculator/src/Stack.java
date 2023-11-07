@@ -1,3 +1,10 @@
+/**
+ * Stack.java
+ * Authors: Luke O’Drobinak, Hugh Karmozyn
+ * Date: 11/7/2023
+ * Collaborators:
+ * Citations: Google, Stack Overflow
+ **/
 public class Stack <T> {
 
     private int size; // size
