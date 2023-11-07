@@ -1,13 +1,24 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Please Enter Your Math Equation in Reverse Polish notation");
-        String userInput = s.nextLine();
 
         PostFixCalculator calc = new PostFixCalculator();
 
-        System.out.println("The answer is: " + calc.calculate(userInput));
+        try {
+
+            Scanner fromFile = new Scanner(new File("input.txt"));
+
+            while (fromFile.hasNextLine()) {
+                String input = fromFile.nextLine();
+                System.out.println("Expression in postfix notation: " + input);
+                System.out.println("Result: " + calc.calculate(input));
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
