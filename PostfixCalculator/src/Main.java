@@ -5,18 +5,9 @@ public class Main {
         System.out.println("Please Enter Your Math Equation in Reverse Polish notation");
         String userInput = s.nextLine();
 
+        PostFixCalculator calc = new PostFixCalculator();
 
-        Stack forward = new Stack<>();
-        Stack backwards = new Stack<>();
-
-        for(int i=0; i<userInput.length(); i++){
-            forward.push(userInput.charAt(i));
-        }
-
-        for(int i=0; i< userInput.length();i++){
-            backwards.push(forward.pop());
-        }
-        System.out.println(backwards.peek());
+        System.out.println("The answer is: " + calc.calculate(userInput));
 
     }
 }
